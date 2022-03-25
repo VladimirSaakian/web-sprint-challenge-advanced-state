@@ -3,20 +3,22 @@ import { connect } from 'react-redux'
 import * as actionCreators from '../state/action-creators'
 
 export function Wheel(props) {
-
   const {
-    moveClockwise, moveCounterClockwise, wheel
+    moveClockwise,
+    moveCounterClockwise,
+    wheel
   } = props
-
 
   const handleMoveClockwise = (evt) => {
     const { value } = evt.target
     moveClockwise(value)
+    console.log(props)
   }
 
   const handleMoveCounterClockwise = (evt) => {
     const { value } = evt.target
     moveCounterClockwise(value)
+    console.log(props)
   }
 
 
@@ -38,4 +40,4 @@ export function Wheel(props) {
   )
 }
 
-export default connect( st => st, actionCreators )(Wheel)
+export default connect( st => st, actionCreators)(Wheel)
